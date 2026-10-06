@@ -26,6 +26,12 @@ Open the private Sheet in the organiser's Google account, then choose **File →
 
 The webhook is configured by the `_webhook` hidden field in `docs/index.html`. Update the existing Apps Script deployment to preserve that URL. Restrict mailbox and Sheet access, and share details only with relevant members for the consented purpose. If a webhook delivery fails, the email remains the fallback intake record.
 
+### Apps Script maintenance
+
+`integrations/registration-intake.gs` contains the handler template. When installing this template, set the Apps Script property `REGISTRATION_SHEET_ID` to the private workbook ID before deployment; the existing deployment already has its destination configured. Native FormSubmit submissions replace spaces in field names with underscores, and the webhook can JSON-encode `form_data` as a string. The handler accepts both native and AJAX formats. Keep the direct HtmlService acknowledgement: the ContentService redirect caused the native FormSubmit flow to show a server error after writing a row.
+
+Verified on 6 October 2026 with a live browser candidate submission, CAPTCHA, matching Sheet reference and successful return to `thanks.html`. The previously missed pre-integration registration was recovered from its original email with its original consent version and timestamp preserved.
+
 ## Editing
 
 - `docs/index.html`: English landing-page copy, event details, email recipient.
