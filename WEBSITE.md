@@ -20,7 +20,11 @@ Registrations use FormSubmit's native multipart form submission to `shray@urjate
 3. Repeat for a vendor in Hindi. The interface is translated; stable English field names and option values are used in the email for easy sorting.
 4. Delete the test emails when finished. Do not print the QR for unattended registration until delivery is verified.
 
-There is no candidate database or admin dashboard. The organiser's inbox is the intake record. Each submitted form includes a reference and timestamp. Restrict mailbox access and share details only with relevant members for the consented purpose. FormSubmit documents 30-day submission retention and does not retain file attachments in its archive.
+Registrations are also delivered by FormSubmit webhook to an organiser-owned, private Google Sheet with Candidates and Vendors tabs. The Google Apps Script endpoint appends validated submissions, deduplicates references and never returns registration records. Keep Sheet sharing restricted. The public webhook URL is not an authentication secret; it allows submission but not reading existing data.
+
+Open the private Sheet in the organiser's Google account, then choose **File → Download → Microsoft Excel (.xlsx)** to export both tabs. CVs and brochures remain in the email inbox; the Sheet records the attachment filename. Each registration includes a reference and timestamp for matching the email. Historical emails are not automatically imported. FormSubmit documents 30-day submission retention and does not retain file attachments in its archive.
+
+The webhook is configured by the `_webhook` hidden field in `docs/index.html`. Update the existing Apps Script deployment to preserve that URL. Restrict mailbox and Sheet access, and share details only with relevant members for the consented purpose. If a webhook delivery fails, the email remains the fallback intake record.
 
 ## Editing
 
