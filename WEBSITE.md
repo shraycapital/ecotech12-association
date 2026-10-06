@@ -7,15 +7,15 @@ The fair copy says “10 October 2026 to Dussehra”. No venue is displayed.
 
 ## Email delivery
 
-Activated and verified on 6 October 2026: FormSubmit accepted the post-activation test and the organiser confirmed receipt at `shray@urjatech.com`. Browser tests also verified candidate and vendor flows, Hindi switching, required inputs, consent and a complete local multipart submission with an attachment. Native production CAPTCHA and attachment inbox delivery should be included in the stall team's final phone test.
+Activated and verified on 6 October 2026: FormSubmit accepted the post-activation test and the organiser confirmed receipt at the original organiser inbox. Browser tests also verified candidate and vendor flows, Hindi switching, required inputs, consent and a complete local multipart submission with an attachment. Native production CAPTCHA and attachment inbox delivery should be included in the stall team's final phone test.
 
 Print assets: [A4 poster](docs/stall-poster.pdf) and [QR image](docs/registration-qr.png). The QR was independently decoded from the image and rendered PDF and resolves to the live HTTPS site.
 
 ### Activation / re-testing steps for future changes
 
-Registrations use FormSubmit's native multipart form submission to `shray@urjatech.com`, including an optional PDF/DOC/DOCX attachment up to 5 MB. FormSubmit's default security challenge is retained. A successful frontend build does not verify inbox delivery.
+Registrations use FormSubmit's activated native multipart submission endpoint, with a copy to `ecotech12ia@gmail.com`, including an optional PDF/DOC/DOCX attachment up to 5 MB. The original organiser inbox remains the primary delivery destination. Public contact links and the poster use only `ecotech12ia@gmail.com`. FormSubmit's default security challenge is retained. A successful frontend build does not verify inbox delivery.
 
-1. Activate FormSubmit using the email it sends to `shray@urjatech.com` after the first submission. Check spam as well.
+1. Activate FormSubmit using the email it sends to the original organiser inbox after the first submission. Check spam as well.
 2. Submit a clearly marked candidate test from the live site, complete the security check and verify the email arrives with all selected fields and an optional sample attachment.
 3. Repeat for a vendor in Hindi. The interface is translated; stable English field names and option values are used in the email for easy sorting.
 4. Delete the test emails when finished. Do not print the QR for unattended registration until delivery is verified.
