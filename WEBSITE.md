@@ -5,7 +5,13 @@ https://shraycapital.github.io/ecotech12-association/
 
 The fair copy says “10 October 2026 to Dussehra”. No venue is displayed.
 
-## Email activation — complete before using the stall QR
+## Email delivery
+
+Activated and verified on 6 October 2026: FormSubmit accepted the post-activation test and the organiser confirmed receipt at `shray@urjatech.com`. Browser tests also verified candidate and vendor flows, Hindi switching, required inputs, consent and a complete local multipart submission with an attachment. Native production CAPTCHA and attachment inbox delivery should be included in the stall team's final phone test.
+
+Print assets: [A4 poster](docs/stall-poster.pdf) and [QR image](docs/registration-qr.png). The QR was independently decoded from the image and rendered PDF and resolves to the live HTTPS site.
+
+### Activation / re-testing steps for future changes
 
 Registrations use FormSubmit's native multipart form submission to `shray@urjatech.com`, including an optional PDF/DOC/DOCX attachment up to 5 MB. FormSubmit's default security challenge is retained. A successful frontend build does not verify inbox delivery.
 
